@@ -1,1 +1,8 @@
-
+- User | table ini memiliki fungsi untuk menyimpan data user dan admin, keduanya dibedakan melalui column role. Nanti nya column role akan digunakan untuk membedakan proses authentication dan middleware
+- Product | berisi nama product yang akan di jual, berelasi dengan category dari product nya (one to one)
+- Category | berisi informasi category yang akan dimiliki tiap product
+- Detail_product | berisi informasi spesifik tiap product, berapa stock pada tiap ukuran. Berelasi dengan table size
+- Size | berisi data jenis jenis ukuran
+- Cart | apabila user ingin membeli product, maka data tersebut akan masuk ke cart. Data yang masuk ada detail_product, jadi terdapat informasi product, size, quantity
+- Transaksi | apabila user memasukan product ke cart, maka akan data tersebut juga akan masuk ke transasksi, kemudian apabila sudah dibayar maka status transaksi akan berubah
+- Status transaksi | berisi data jenis status transaksi

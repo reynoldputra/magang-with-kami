@@ -1,0 +1,57 @@
+- Apakah hasil foo?
+var foo = 10 + ’20’;
+
+Jawab :
+1020
+
+=============================================================
+
+- Bagaimana Anda akan membuat fungsi berikut ini bekerja?
+add(2, 5); // 7
+add(2)(5); // 7
+
+Jawab :
+
+function add(x,y){
+    return x + y;
+}
+
+add(2,5)
+
+----------------------------------------
+
+function add(x){
+  return function(y){
+    return x + y;
+  };
+}
+
+add(2)(5)
+
+
+=============================================================
+- Apakah hasil dari dua alert di bawah ini?
+var foo = “Hello”;
+(function() {
+  var bar = ” World”;
+  alert(foo + bar);
+})();
+alert(foo + bar);
+
+
+Jawab :
+alert pertama (yang berada dalam scope function anon) akan memiliki value "HelloWorld". Sedagkan alert kedua akan menghasilkan error karna tidak dapat mendeteksi variable bar. Hal ini dikarenakan variable bar dideklarasi didalam scope function sehingga tidak bisa diakses diluar scope tersebut
+
+
+=============================================================
+
+- Apakah hasil yang akan dicetak dalam kode berikut ini?
+console.log(‘one’);
+setTimeout(function() {
+  console.log(‘two’);
+}, 0);
+console.log(‘three’);
+
+
+jawab :
+one, three, two. Ini terjadi karna menggunakan setTimeout atau async function, jadi function tersebut akan dijalankan pada webapi dan disimpan didalam queue. Apabila event stack sudah kosong, maka value yang ada dalam queue akan ditampilkan
